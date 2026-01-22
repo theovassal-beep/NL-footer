@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'PolySans';
+    src: url('fonts/PolySans-Bulky.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('fonts/PolySans-Slim.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Fallbacks to OTF if needed for other weights */
+@font-face {
+    font-family: 'PolySans';
+    src: url('fonts/PolySansNeutral.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('fonts/PolySansMedian.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    --bg-dark: #0D1117;
+    /* SLightly adjusted for clarity */
+    --text-white: #ffffff;
+    --text-muted: #8b949e;
+    --accent-purple: #9d00ff;
+    --accent-purple-hover: #b84dff;
+    --input-bg: rgba(255, 255, 255, 0.03);
+    --input-border: rgba(255, 255, 255, 0.08);
+    --font-poly: 'PolySans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: var(--font-poly);
+    -webkit-font-smoothing: antialiased;
+}
+
+.newsletter-section {
+    background-color: var(--bg-dark);
+    padding: 60px 40px;
+    /* Reduced vertical padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-white);
+}
+
+.newsletter-container {
+    max-width: 1140px;
+    /* Slightly narrower */
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    /* Adjust proportions */
+    gap: 80px;
+    align-items: center;
+}
+
+.newsletter-content h2 {
+    font-family: 'PolySans';
+    font-weight: 800;
+    font-size: 2.5rem;
+    /* Reduced size to avoid "bulky" feel */
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.newsletter-content p {
+    font-family: 'PolySans';
+    font-weight: 300;
+    /* Slim version */
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 440px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    /* Tighter gap */
+    width: 100%;
+}
+
+.newsletter-form .input-group {
+    flex-grow: 1;
+    position: relative;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 14px 20px;
+    /* Slimmer inputs */
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    /* Sharper corners */
+    color: var(--text-white);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    outline: none;
+    font-family: var(--font-poly);
+    font-weight: 300;
+}
+
+.newsletter-form input:focus {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(157, 0, 255, 0.5);
+}
+
+.newsletter-form input::placeholder {
+    color: #484f58;
+}
+
+.newsletter-form button {
+    padding: 0 28px;
+    background-color: var(--accent-purple);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    /* Sharper corners */
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: var(--font-poly);
+}
+
+.newsletter-form button:hover {
+    background-color: var(--accent-purple-hover);
+    transform: translateY(-1px);
+    /* More subtle animation */
+    box-shadow: 0 4px 12px rgba(157, 0, 255, 0.3);
+}
+
+@media (max-width: 992px) {
+    .newsletter-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .newsletter-content p {
+        margin: 0 auto;
+    }
+
+    .newsletter-section {
+        padding: 48px 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .newsletter-content h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        padding: 14px;
+    }
+}
