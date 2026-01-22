@@ -87,9 +87,12 @@ body {
     font-weight: 300;
     /* Slim version */
     font-size: 1.05rem;
-    color: var(--text-muted);
+    color: var(--text-white);
+    /* Changed to white for better contrast */
     line-height: 1.5;
     max-width: 440px;
+    opacity: 0.9;
+    /* Slight opacity for elegance while remaining readable */
 }
 
 .newsletter-form {
@@ -126,7 +129,8 @@ body {
 }
 
 .newsletter-form input::placeholder {
-    color: #484f58;
+    color: #8b949e;
+    /* Proposing a brighter grey for better visibility */
 }
 
 .newsletter-form button {
